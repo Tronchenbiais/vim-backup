@@ -1,9 +1,9 @@
 [submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
+	path = pack/bundle/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/vim-pandoc-syntax"]
-	path = bundle/vim-pandoc-syntax
+	path = pack/bundle/start/vim-pandoc-syntax
 	url = https://github.com/scrooloose/nerdtree
 [submodule "bundle/gruvbox"]
-	path = bundle/gruvbox
+	path = pack/bundle/start/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
