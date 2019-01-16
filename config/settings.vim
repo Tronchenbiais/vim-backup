@@ -1,7 +1,6 @@
 " Colorscheme
 set background=dark
-let g:gruvbox_italic=1
-colorscheme gruvbox
+colorscheme solarized
 filetype plugin indent on
 syntax on
 

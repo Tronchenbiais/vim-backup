@@ -2,8 +2,20 @@
 	path = pack/bundle/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/vim-pandoc-syntax"]
-	path = pack/bundle/start/vim-pandoc-syntax
+	path = pack/bundle/opt/vim-pandoc-syntax
 	url = https://github.com/scrooloose/nerdtree
-[submodule "bundle/gruvbox"]
-	path = pack/bundle/start/gruvbox
-	url = https://github.com/morhetz/gruvbox.git
+[submodule "pack/bundle/start/vim-fugitive"]
+	path = pack/bundle/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "pack/bundle/start/vim-surround"]
+	path = pack/bundle/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "pack/bundle/start/syntastic"]
+	path = pack/bundle/start/syntastic
+	url = https://github.com/scrooloose/syntastic
+[submodule "pack/bundle/start/vim-colors-solarized"]
+	path = pack/bundle/start/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
+[submodule "pack/bundle/start/vim-airline"]
+	path = pack/bundle/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
