@@ -19,3 +19,9 @@
 [submodule "pack/bundle/start/vim-airline"]
 	path = pack/bundle/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+[submodule "pack/bundle/start/ctrlp.vim"]
+	path = pack/bundle/start/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "pack/bundle/start/supertab"]
+	path = pack/bundle/start/supertab
+	url = https://github.com/ervandew/supertab
