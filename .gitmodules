@@ -25,3 +25,6 @@
 [submodule "pack/bundle/start/supertab"]
 	path = pack/bundle/start/supertab
 	url = https://github.com/ervandew/supertab
+[submodule "pack/bundle/start/neosnippet.vim"]
+	path = pack/bundle/start/neosnippet.vim
+	url = https://github.com/Shougo/neosnippet.vim.git
