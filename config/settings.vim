@@ -24,6 +24,7 @@ set incsearch
 set ignorecase
 set smartcase
 set encoding=utf-8
+set belloff=all
 
 " Indent settings
 set shiftwidth=4

@@ -31,3 +31,6 @@
 [submodule "pack/bundle/start/neosnippet-snippets"]
 	path = pack/bundle/start/neosnippet-snippets
 	url = https://github.com/Shougo/neosnippet-snippets.git
+[submodule "pack/bundle/opt/omnisharp"]
+	path = pack/bundle/opt/omnisharp
+	url = https://github.com/OmniSharp/omnisharp-vim.git
