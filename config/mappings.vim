@@ -21,5 +21,7 @@ inoremap "" "<ESC>a"<ESC>i
 " Insert mode movements
 inoremap <C-A> <ESC>I
 inoremap <C-E> <ESC>A
-inoremap <C-W> <ESC>wi
+inoremap <C-W> <ESC>ea
 inoremap <C-B> <ESC>bi
+" Ctrl-Backspace to delete word
+inoremap <C-BS> <C-W>

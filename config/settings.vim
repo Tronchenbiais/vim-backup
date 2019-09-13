@@ -1,8 +1,16 @@
 " Colorscheme
 set background=dark
-colorscheme solarized
+if has("gui_running")
+    colorscheme solarized
+endif
 filetype plugin indent on
 syntax on
+
+" Appearance
+set guioptions-=m
+set guioptions-=T
+set guioptions-=L
+set guioptions-=r
 
 " Common options
 set mouse=a
