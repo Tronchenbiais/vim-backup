@@ -22,3 +22,9 @@ Or
 ```
 echo "source <this_repo>/vimrc" > ~/.vimrc
 ```
+
+For plugins to work this has to be in your packpath. If needed add the
+following line to your .vimrc : 
+``` 
+set packpath=<this_repo> 
+```
