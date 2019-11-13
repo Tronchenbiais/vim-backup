@@ -18,13 +18,13 @@ nnoremap <S-Tab> <C-w>W
 nnoremap zs 1z=
 
 " Auto-closing brackets and quotes
-iabbrev (( (<CR><ESC>a)<ESC>O
-iabbrev )) (<ESC>a)<ESC>i
-iabbrev [[ [<CR><ESC>a]<ESC>O
-iabbrev ]] [<ESC>a]<ESC>i
-iabbrev {{ {<CR><ESC>a}<ESC>O
-iabbrev }} {<ESC>a}<ESC>i
-iabbrev "" "<ESC>a"<ESC>i
+"iabbrev (( (<CR><ESC>a)<ESC>O
+"iabbrev )) (<ESC>a)<ESC>i
+"iabbrev [[ [<CR><ESC>a]<ESC>O
+"iabbrev ]] [<ESC>a]<ESC>i
+"iabbrev {{ {<CR><ESC>a}<ESC>O
+"iabbrev }} {<ESC>a}<ESC>i
+"iabbrev "" "<ESC>a"<ESC>i
 
 " Insert mode movements
 inoremap <C-A> <ESC>I
