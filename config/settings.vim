@@ -1,22 +1,7 @@
 " Colorscheme
 set background=dark
-if has("gui_running")
-    colorscheme solarized
-endif
 filetype plugin indent on
 syntax on
-
-" Appearance
-if(has('win32'))
-    set guifont=Consolas:h11
-endif
-if(has('gui_running'))
-    colorscheme solarized
-    set guioptions-=m
-    set guioptions-=T
-    set guioptions-=L
-    set guioptions-=r
-endif
 
 " Common options
 set mouse=a
@@ -34,6 +19,10 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set autoindent
+
+""""""""""""""""""""""""""
+"""" WINDOWS SPECIFIC """"
+""""""""""""""""""""""""""
 
 " backup files and undo files
 if(has('win32'))
