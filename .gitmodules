@@ -28,18 +28,12 @@
 [submodule "bufexplorer"]
 	path = pack/bundle/start/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
-[submodule "dwm.vim"]
-	path = pack/bundle/start/dwm.vim
-	url = https://github.com/spolu/dwm.vim.git
 [submodule "pack/start"]
 	path = pack/start
 	url = https://github.com/sukima/xmledit.git
-[submodule "pack/bundle/start/emmet.vim"]
-	path = pack/bundle/start/emmet.vim
-	url = https://github.com/mattn/emmet-vim.git
 [submodule "NeoDebug"]
 	path = pack/bundle/start/NeoDebug
 	url = https://github.com/cpiger/NeoDebug.git
-[submodule "pack/bundle/start/table-mode.vim"]
-	path = pack/bundle/start/table-mode.vim
-	url = https://github.com/dhruvasagar/vim-table-mode.git
+[submodule "pack/bundle/start/gruvbox"]
+	path = pack/bundle/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
