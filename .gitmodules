@@ -10,9 +10,6 @@
 [submodule "pack/bundle/start/vim-airline"]
 	path = pack/bundle/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "pack/bundle/start/ctrlp.vim"]
-	path = pack/bundle/start/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
 [submodule "pack/bundle/start/supertab"]
 	path = pack/bundle/start/supertab
 	url = https://github.com/ervandew/supertab
@@ -31,9 +28,12 @@
 [submodule "pack/start"]
 	path = pack/start
 	url = https://github.com/sukima/xmledit.git
-[submodule "NeoDebug"]
-	path = pack/bundle/start/NeoDebug
-	url = https://github.com/cpiger/NeoDebug.git
 [submodule "pack/bundle/start/gruvbox"]
 	path = pack/bundle/start/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
+[submodule "pack/bundle/start/LanguageClient-neovim"]
+	path = pack/bundle/start/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim.git
+[submodule "pack/bundle/start/fzf"]
+	path = pack/bundle/start/fzf
+	url = https://github.com/junegunn/fzf.git

@@ -6,9 +6,10 @@ let g:vifm_embed_term=1
 " Use bufExplorer to switch between buffers
 nmap <Leader>b :BufExplorer<CR>
 
-" Use xmledit for html, php, xhtml
-let g:xmledit_enable_html=1
+"================
+" LanguageClient
+"================
 
-" Use emmet for html and css and the like
-let g:user_emmet_install_global = 0
-autocmd FileType html,xhtml,php,css EmmetInstall
+let g:LanguageClient_serverCommands = {
+    \ 'c': ['clangd-8'],
+    \ }
