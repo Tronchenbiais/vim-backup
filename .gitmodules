@@ -1,39 +1,33 @@
-[submodule "pack/bundle/start/vim-fugitive"]
+[submodule "vim-fugitive"]
 	path = pack/bundle/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "pack/bundle/start/vim-surround"]
+[submodule "vim-surround"]
 	path = pack/bundle/start/vim-surround
 	url = https://github.com/tpope/vim-surround
-[submodule "pack/bundle/start/vim-colors-solarized"]
-	path = pack/bundle/start/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized
-[submodule "pack/bundle/start/vim-airline"]
-	path = pack/bundle/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "pack/bundle/start/supertab"]
+[submodule "supertab"]
 	path = pack/bundle/start/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "pack/bundle/start/neosnippet.vim"]
-	path = pack/bundle/start/neosnippet.vim
+[submodule "neosnippet"]
+	path = pack/bundle/start/neosnippet
 	url = https://github.com/Shougo/neosnippet.vim.git
-[submodule "pack/bundle/start/neosnippet-snippets"]
+[submodule "neosnippet-snippets"]
 	path = pack/bundle/start/neosnippet-snippets
 	url = https://github.com/Shougo/neosnippet-snippets.git
-[submodule "vifm.vim"]
-	path = pack/bundle/start/vifm.vim
+[submodule "vifm"]
+	path = pack/bundle/start/vifm
 	url = https://github.com/vifm/vifm.vim.git
 [submodule "bufexplorer"]
 	path = pack/bundle/start/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
-[submodule "pack/start"]
-	path = pack/start
-	url = https://github.com/sukima/xmledit.git
-[submodule "pack/bundle/start/gruvbox"]
+[submodule "gruvbox"]
 	path = pack/bundle/start/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
-[submodule "pack/bundle/start/LanguageClient-neovim"]
+[submodule "LanguageClient-neovim"]
 	path = pack/bundle/start/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim.git
-[submodule "pack/bundle/start/fzf"]
+[submodule "fzf"]
 	path = pack/bundle/start/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "lightline"]
+	path = pack/bundle/start/lightline
+	url = https://github.com/itchyny/lightline.vim.git
