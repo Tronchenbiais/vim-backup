@@ -24,6 +24,22 @@ nmap <LocalLeader>f :call LanguageClient_textDocument_formatting()<CR>
 nmap <LocalLeader>u :call LanguageClient_textDocument_documentHighlight()<CR>
 nmap <LocalLeader>e :call LanguageClient#explainErrorAtPoint()<CR>
 
+augroup LanguageClient_config
+    au BufEnter * let b:Plugin_LanguageClient_started=0
+    au User LanguageClientStarted setl signcolumn=yes
+    au User LanguageClientStarted let b:Plugin_LanguageClient_started=1
+    au User LanguageClientStarted call SuperTabChain(&omnifunc, '<c-n>')
+    au User LanguageClientStopped setl signcolumn=auto
+    au User LanguageClientStopped let b:Plugin_LanguageClient_started=0
+    if has('nvim')
+        au CursorMoved * 
+                    \ if b:Plugin_LanguageClient_started |
+                    \ silent call LanguageClient#textDocument_documentHighlight() |
+                    \ silent call LanguageClient#textDocument_hover() |
+                    \ endif
+    endif
+augroup END
+
 "=====
 " FZF
 "=====
@@ -50,5 +66,6 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 "==========
 
 let g:SuperTabLongestEnhanced=1
-let g:SuperTabDefaultCompletionType='<c-x><c-o>'
+let g:SuperTabDefaultCompletionType='context'
+let g:SuperTabRetainCompletionDuration='completion'
 
