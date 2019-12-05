@@ -7,8 +7,13 @@ exe "set packpath+=" . fnameescape(s:path)
 " Load packages
 packloadall
 
-" Config files inclusion
-for s:file in glob(s:path . '/config/**/*.vim', 0, 1)
+" General config files inclusion
+for s:file in glob(s:path . '/config/*.vim', 0, 1)
+  exe 'source ' . s:file
+endfor
+
+" Local config files inclusion
+for s:file in glob(s:path . '/config/local/*.vim', 0, 1)
   exe 'source ' . s:file
 endfor
 

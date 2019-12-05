@@ -10,10 +10,6 @@ let g:vifm_embed_term=1
 " LanguageClient
 "================
 
-let g:LanguageClient_serverCommands={
-    \ 'c': ['ccls'],
-    \ 'cpp': ['ccls'],
-    \ }
 let g:LanguageClient_selectionUI="quickfix"
 let g:LanguageClient_diagnosticsList="Location"
 let g:LanguageClient_useFloatingHover=1

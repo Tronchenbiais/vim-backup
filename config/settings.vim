@@ -8,17 +8,20 @@ syntax on
 set mouse=a
 set number
 set showcmd
-set wildmenu "c-n and c-p in command line
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase
 set encoding=utf-8
 set belloff=all
-set completeopt=menu,menuone,longest,preview
-set noinfercase
 set splitbelow
 set splitright
+
+" Insert and command mode completion
+set wildmode=longest:full,full
+set wildmenu
+set completeopt=menu,menuone,longest,preview
+set noinfercase
 
 " Indent settings
 set shiftwidth=4
