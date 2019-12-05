@@ -7,15 +7,9 @@
 [submodule "pack/bundle/start/supertab"]
 	path = pack/bundle/start/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "pack/bundle/start/neosnippet"]
-	path = pack/bundle/start/neosnippet
-	url = https://github.com/Shougo/neosnippet.vim.git
 [submodule "pack/bundle/start/neosnippet-snippets"]
 	path = pack/bundle/start/neosnippet-snippets
 	url = https://github.com/Shougo/neosnippet-snippets.git
-[submodule "pack/bundle/start/vifm"]
-	path = pack/bundle/start/vifm
-	url = https://github.com/vifm/vifm.vim.git
 [submodule "pack/bundle/start/bufexplorer"]
 	path = pack/bundle/start/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer.git
@@ -28,9 +22,15 @@
 [submodule "pack/bundle/start/fzf"]
 	path = pack/bundle/start/fzf
 	url = https://github.com/junegunn/fzf.git
-[submodule "pack/bundle/start/lightline"]
-	path = pack/bundle/start/lightline
-	url = https://github.com/itchyny/lightline.vim.git
 [submodule "pack/bundle/start/fzf.vim"]
 	path = pack/bundle/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule "pack/bundle/start/neosnippet"]
+	path = pack/bundle/start/neosnippet
+	url = https://github.com/Shougo/neosnippet.vim.git
+[submodule "pack/bundle/start/vifm.vim"]
+	path = pack/bundle/start/vifm.vim
+	url = https://github.com/vifm/vifm.vim.git
+[submodule "pack/bundle/start/lightline"]
+	path = pack/bundle/start/lightline
+	url = https://github.com/itchyny/lightline.vim.git
