@@ -15,13 +15,10 @@ let g:LanguageClient_diagnosticsList="Location"
 let g:LanguageClient_useFloatingHover=1
 
 nmap <LocalLeader><LocalLeader> :call LanguageClient_contextMenu()<CR>
-nmap <LocalLeader>s :call LanguageClient_textDocument_documentSymbol()<CR>
 nmap <LocalLeader>h :call LanguageClient_textDocument_hover()<CR>
 nmap <LocalLeader>d :call LanguageClient_textDocument_definition()<CR>
 nmap <LocalLeader>i :call LanguageClient_textDocument_implementation()<CR>
 nmap <LocalLeader>r :call LanguageClient_textDocument_references()<CR>
-nmap <LocalLeader>f :call LanguageClient_textDocument_formatting()<CR>
-nmap <LocalLeader>u :call LanguageClient_textDocument_documentHighlight()<CR>
 nmap <LocalLeader>e :call LanguageClient#explainErrorAtPoint()<CR>
 
 augroup LanguageClient_config
@@ -40,19 +37,41 @@ augroup LanguageClient_config
     endif
 augroup END
 
-"=====
-" FZF
-"=====
+"========
+" Denite
+"========
 
-let g:fzf_command_prefix='Fzf'
+" view mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+    nnoremap <silent><buffer><expr> <CR>
+                \ denite#do_map('do_action')
+    nnoremap <silent><buffer><expr> d
+                \ denite#do_map('do_action', 'delete')
+    nnoremap <silent><buffer><expr> p
+                \ denite#do_map('do_action', 'preview')
+    nnoremap <silent><buffer><expr> q
+                \ denite#do_map('quit')
+    nnoremap <silent><buffer><expr> i
+                \ denite#do_map('open_filter_buffer')
+    nnoremap <silent><buffer><expr> <Space>
+                \ denite#do_map('toggle_select').'j'
+endfunction
 
-nmap <Leader>b :FzfBuffers<CR>
-nmap <Leader>f :FzfFiles<CR>
-nmap <Leader>h :FzfHelptags<CR>
-nmap <Leader>c :FzfCommands<CR>
+" filter mappings
+autocmd FileType denite-filter call s:denite_filter_my_settings()
+function! s:denite_filter_my_settings() abort
+    imap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
+endfunction
 
-" What is this
-nmap <leader><tab> <plug>(fzf-maps-n)
+" shortcuts
+nmap <Leader>b :Denite buffer<CR>
+nmap <Leader>f :Denite file/rec<CR>
+nmap <Leader>h :Denite help<CR>
+nmap <Leader>c :Denite command_history<CR>
+nmap <Leader>C :Denite command<CR>
+nmap <Leader>s :Denite documentSymbol<CR>
+nmap <Leader>S :Denite workspaceSymbol<CR>
 
 "============
 " NeoSnippet
@@ -62,10 +81,24 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 "==========
-" Supertab
+" Deoplete
 "==========
 
-let g:SuperTabLongestEnhanced=1
-let g:SuperTabDefaultCompletionType='context'
-let g:SuperTabRetainCompletionDuration='completion'
+call deoplete#custom#option('auto_complete', v:false)
 
+call deoplete#custom#option('source',
+            \ { '_' : 'buffer' })
+
+inoremap <C-Space> deoplete#manual_complete('file')
+
+" Supertab emulation
+inoremap <silent><expr> <TAB>
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ deoplete#manual_complete()
+
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
