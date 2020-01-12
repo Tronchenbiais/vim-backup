@@ -16,6 +16,7 @@ set encoding=utf-8
 set belloff=all
 set splitbelow
 set splitright
+set clipboard=unnamedplus
 
 " Insert and command mode completion
 set wildmode=longest:full,full

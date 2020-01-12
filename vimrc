@@ -21,7 +21,5 @@ endfor
 " Gui-specific configuration
 if has("gui_running")
     exe 'source ' . fnameescape(g:vimConfigPath) . '/gvimrc'
-elseif has("nvim")
-    au UIEnter * exe 'source ' . fnameescape(g:vimConfigPath) . '/gvimrc'
 endif
 
