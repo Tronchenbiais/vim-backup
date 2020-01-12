@@ -1,25 +1,20 @@
 ## Install: 
 
-Clone the repo :
+Clone the repo with the submodules (plugins) :
 
 ```
-git clone <this_repo>
+git clone --recursive <this_repo>
 ```
 
-Update the submodules :
-
-```
-git submodule init
-git submodule update
-```
-
-Point your .vimrc to this repo :
+Point your `.vimrc` (and/or `init.vim`) to this repo :
 
 ```
 ln -sf ~/.vimrc <this_repo>/vimrc
+ln -sf ~/.config/nvim/init.vim <this_repo>/vimrc
 ```
 Or
 ```
 echo "source <this_repo>/vimrc" > ~/.vimrc
+echo "source <this_repo>/vimrc" > ~/.config/nvim/init.vim
 ```
 
