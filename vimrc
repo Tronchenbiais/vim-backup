@@ -3,6 +3,7 @@ let g:vimConfigPath = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 " Add this directory to the packpath
 exe "set packpath+=" . fnameescape(g:vimConfigPath)
+exe "set runtimepath+=" . fnameescape(g:vimConfigPath . '/runtime/')
 
 " Load packages
 packloadall
@@ -20,4 +21,7 @@ endfor
 " Gui-specific configuration
 if has("gui_running")
     exe 'source ' . fnameescape(g:vimConfigPath) . '/gvimrc'
+elseif has("nvim")
+    au UIEnter * exe 'source ' . fnameescape(g:vimConfigPath) . '/gvimrc'
 endif
+
