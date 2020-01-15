@@ -1,5 +1,4 @@
-" Always show tabline
-set showtabline=2
+" Set custom tabline, that can be interacted with using Denite
 set tabline=%!TabTitles()
 
 augroup tabTitle
