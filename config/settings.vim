@@ -3,6 +3,10 @@ set background=dark
 colorscheme gruvbox
 filetype plugin indent on
 syntax on
+" Dim inactive buffers
+highlight ActiveWin ctermbg=0
+highligh InactiveWin ctermbg=234
+set winhighlight=Normal:ActiveWin,NormalNC:InactiveWin
 
 " Common options
 set mouse=a
