@@ -28,3 +28,6 @@
 [submodule "pack/bundle/start/deoplete"]
 	path = pack/bundle/start/deoplete
 	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "pack/bundle/start/vim-clap"]
+	path = pack/bundle/start/vim-clap
+	url = https://github.com/liuchengxu/vim-clap.git
