@@ -17,70 +17,6 @@ augroup END
 nmap <C-E> :EditVifm<CR>
 let g:vifm_embed_term=1
 
-"================
-" LanguageClient
-"================
-
-let g:LanguageClient_autoStart=0
-let g:LanguageClient_selectionUI="quickfix"
-let g:LanguageClient_diagnosticsList="Location"
-let g:LanguageClient_useFloatingHover=1
-
-nmap <LocalLeader><LocalLeader> :Denite -start-filter contextMenu<CR>
-nmap <LocalLeader>h :call LanguageClient_textDocument_hover()<CR>
-nmap <LocalLeader>d :call LanguageClient_textDocument_definition()<CR>
-nmap <LocalLeader>i :call LanguageClient_textDocument_implementation()<CR>
-nmap <LocalLeader>r :call LanguageClient_textDocument_references()<CR>
-nmap <LocalLeader>e :call LanguageClient#explainErrorAtPoint()<CR>
-nmap <LocalLeader>s :Denite -start-filter documentSymbol<CR>
-nmap <LocalLeader>S :Denite -start-filter -filter-updatetime=0 workspaceSymbol<CR>
-
-augroup LanguageClient_config
-    au!
-    au BufEnter * call CheckLCisAlive()
-    au User LanguageClientStarted bufdo call CheckLCisAlive()
-    au User LanguageClientStopped bufdo call CheckLCisAlive()
-    au CursorMoved * call HandleCursorMoved()
-augroup END
-
-function! CheckLCisAlive() abort
-    if(exists('g:LanguageClient_loaded') && g:LanguageClient_loaded == 1)
-        call LanguageClient#isAlive(funcref('LCisAliveCallback', [bufnr('')]))
-    endif
-endfunction
-
-function! LCisAliveCallback(bufnr, message) abort
-    if a:message.result is v:true
-        call setbufvar(a:bufnr, "LanguageServer_alive", 1)
-        call setbufvar(a:bufnr, "&signcolumn", "yes")
-    else
-        call setbufvar(a:bufnr, "LanguageServer_alive", 0)
-        call setbufvar(a:bufnr, "&signcolumn", "auto")
-    endif
-endfunction
-
-function! HandleCursorMoved() abort
-    if exists('b:LanguageServer_alive') && b:LanguageServer_alive
-        silent call LanguageClient#textDocument_documentHighlight()
-    endif
-endfunction
-
-let g:LanguageClient_documentHighlightDisplay=
-            \{
-            \1: {
-            \"name": "Text",
-            \"texthl": "StatusLine",
-            \},
-            \2: {
-            \"name": "Read",
-            \"texthl": "StatusLineNC",
-            \},
-            \3: {
-            \"name": "Write",
-            \"texthl": "StatusLineNC",
-            \},
-            \}
-
 "========
 " Denite
 "========
@@ -159,53 +95,6 @@ function! DeniteFileBrowser(dir)
     let dirname = DeniteFnameescape(dir)
     exe 'Denite -start-filter file::'. dirname . ' file:new'
 endfunction
-
-"==========
-" Deoplete
-"==========
-
-call deoplete#custom#option('smart_case', v:true)
-call deoplete#custom#option('auto_complete', v:false)
-
-" Source config
-
-call deoplete#custom#source('neosnippet', {
-            \ 'rank': 1000,
-            \ 'sorters': ['sorter_word'],
-            \ 'matchers': ['matcher_head']
-            \ })
-
-call deoplete#custom#option('sources', {
-            \ '_': ['buffer', 'file', 'neosnippet', 'LanguageClient'],
-            \ })
-
-call deoplete#custom#option('ignore_sources', {
-            \ 'c': ['buffer'],
-            \ 'cpp': ['buffer']
-            \ })
-
-augroup autocomplete_filetypes
-    autocmd!
-    autocmd FileType c,cpp call deoplete#custom#buffer_option('auto_complete', v:true)
-augroup END
-
-
-" Supertab emulation
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ deoplete#manual_complete()
-inoremap <silent><expr> <S-TAB>
-            \ pumvisible() ? "\<C-p>" :
-            \ deoplete#manual_complete()
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-" Use deoplete.
-call deoplete#enable()
 
 "============
 " NeoSnippet
