@@ -14,8 +14,31 @@ augroup END
 " Vifm
 "======
 
-nmap <C-E> :EditVifm<CR>
 let g:vifm_embed_term=1
+
+"=========
+" Vim-lsp
+"=========
+
+inoremap <Tab> <C-n>
+inoremap <S-Tab> <C-p>
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
+autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'ccls',
+            \ 'cmd': ['ccls'],
+            \ 'whitelist': ['c', 'cpp'],
+            \ })
+
+function! s:on_lsp_buffer_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+endfunction
+
+augroup lsp_init
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_buffer_enabled()
+augroup END
 
 "========
 " Denite

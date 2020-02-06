@@ -34,3 +34,15 @@
 [submodule "pack/bundle/start/zeavim"]
 	path = pack/bundle/start/zeavim
 	url = https://github.com/KabbAmine/zeavim.vim.git
+[submodule "pack/lsp/start/vim-lsp"]
+	path = pack/lsp/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp.git
+[submodule "pack/lsp/start/async.vim"]
+	path = pack/lsp/start/async.vim
+	url = https://github.com/prabirshrestha/async.vim
+[submodule "pack/lsp/start/asyncomplete"]
+	path = pack/lsp/start/asyncomplete
+	url = https://github.com/prabirshrestha/asyncomplete.vim
+[submodule "pack/lsp/start/asyncomplete-lsp"]
+	path = pack/lsp/start/asyncomplete-lsp
+	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim
