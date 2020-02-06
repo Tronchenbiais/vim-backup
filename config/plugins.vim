@@ -15,7 +15,6 @@ augroup END
 "======
 
 nmap <C-E> :EditVifm<CR>
-nmap <Leader>e :EditVifm<CR>
 let g:vifm_embed_term=1
 
 "================
@@ -107,7 +106,7 @@ function! s:denite_my_settings() abort
                 \ denite#do_map('do_action', 'cd')
     nnoremap <silent><buffer><expr> .
                 \ denite#do_map('do_previous_action')
-    nnoremap <silent><buffer><expr> _
+    nnoremap <silent><buffer><expr> <LocalLeader><LocalLeader>
                 \ denite#do_map('choose_action')
     nnoremap <silent><buffer><expr> q
                 \ denite#do_map('quit')
@@ -133,13 +132,17 @@ function! s:denite_filter_my_settings() abort
                 \ <Esc>
                 \:call denite#call_map('move_up_path')<CR>
                 \:call denite#call_map('open_filter_buffer')<CR>
-
 endfunction
+
+call denite#custom#alias('source', 'file/rec/git', 'file/rec')
+call denite#custom#var('file/rec/git', 'command',
+            \ ['git', 'ls-files', '-co', '--exclude-standard'])
 
 " shortcuts
 nmap <Leader>b :Denite buffer<CR>
-nmap <Leader>f :Denite -start-filter file/rec<CR>
-nmap <Leader>F :call DeniteFileBrowser('')<CR>
+nmap <Leader>f :Denite -start-filter file/rec/git<CR>
+nmap <Leader>F :Denite -start-filter file/rec<CR>
+nmap <Leader>e :call DeniteFileBrowser('')<CR>
 nmap <Leader>h :Denite -start-filter help<CR>
 nmap <Leader>c :Denite command_history<CR>
 nmap <Leader>C :Denite -start-filter command<CR>

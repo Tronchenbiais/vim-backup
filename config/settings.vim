@@ -10,7 +10,7 @@ set winhighlight=Normal:ActiveWin,NormalNC:InactiveWin
 
 " Common options
 set mouse=a
-set number
+set number relativenumber
 set showcmd
 set incsearch
 set hlsearch
@@ -40,8 +40,22 @@ set colorcolumn=80
 
 " Folding
 set foldmethod=indent
-set foldnestmax=1
-set foldlevel=2
+set foldnestmax=2
+set foldlevel=0
+
+"==============
+" NVIM SPECIFIC
+"==============
+
+" Terminal sepcific options
+if(has('nvim'))
+    augroup terminal_config
+        au!
+        autocmd TermOpen * setlocal nonumber norelativenumber
+        tmap <C-S> <C-\><C-N>
+        tmap <C-Q> <C-\><C-N>
+    augroup END
+endif
 
 "==================
 " WINDOWS SPECIFIC

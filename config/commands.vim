@@ -4,3 +4,5 @@
 
 :command Vimrc exe 'Denite -start-filter file/rec:' . DeniteFnameescape(g:vimConfigPath)
 
+:command! Term 15new +terminal | norm i
+
