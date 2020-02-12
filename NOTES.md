@@ -1,9 +1,11 @@
 # Things to do
 
 - Language server client (try some and find a good one)
+    - probably vim-lsp, then waiting for nvim-lsp to be stable
 - Wire everything together (completion, snippets, git) 
+    - This is coming together at last
 
 # Things to try
 
-- Set up an omnibar using unite.vim, ctrlp.vim (or try out something else) and ack.vim or ag.vim
-- ALE.vim
+- omnibar : Denite is pretty complete, but heavy and sometimes buggy
+    - should try fzf / crtlp again ? probably not
