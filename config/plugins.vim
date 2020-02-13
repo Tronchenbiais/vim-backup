@@ -214,3 +214,22 @@ call deoplete#enable()
 imap <C-Space> <Plug>(neosnippet_expand_or_jump)
 smap <C-Space> <Plug>(neosnippet_expand_or_jump)
 
+"========
+" Zeavim
+"========
+
+let g:zv_file_type =
+            \{ 'haskell' : 'haskell'
+            \}
+
+let g:zv_docsets_dir =
+            \has('unix')
+            \? $HOME . '/.local/share/docsets'
+            \: ""
+
+let g:zv_disable_mapping = 1
+
+nnoremap <Leader>z <Plug>Zeavim
+vnoremap <Leader>z <Plug>ZVVisSelection
+vnoremap <Leader><Leader>z <Plug>ZVKeyDocset
+
