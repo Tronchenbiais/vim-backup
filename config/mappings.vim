@@ -12,7 +12,14 @@ nmap <Leader>w :tabclose<CR>
 " Windows
 nnoremap <C-C> <C-W>c
 nnoremap <C-T> :vnew<CR>
-nnoremap <Leader><Leader> :cclose\|lclose\|helpclose\|pclose<CR>
+nnoremap <Esc> :cclose\|lclose\|helpclose\|pclose<CR>
+
+" Windows
+nnoremap <M-j> <C-w>w
+nnoremap <M-k> <C-w>W
+" Buffers
+nnoremap <M-J> :bnext \| ls<CR>
+nnoremap <M-K> :bprevious \| ls<CR>
 
 " Using the TAB Key
 " Switching between windows
@@ -37,8 +44,8 @@ inoremap {<CR> {<CR>}<ESC>O
 " Navigating errors
 nmap <C-n> :cnext<CR>
 nmap <C-p> :cprevious<CR>
-nmap <Leader>n :lnext<CR>
-nmap <Leader>p :lprevious<CR>
+nmap <M-n> :lnext<CR>
+nmap <M-p> :lprevious<CR>
 
 " Ctrl-Backspace to delete word
 inoremap <C-H> <C-W>

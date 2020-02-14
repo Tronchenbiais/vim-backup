@@ -14,15 +14,87 @@ augroup END
 " Vifm
 "======
 
+nmap <Leader>e :Vifm<CR>
 let g:vifm_embed_term=1
+
+"==============
+" Asyncomplete
+"==============
+
+inoremap <Tab> <C-n>
+inoremap <S-Tab> <C-p>
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
+let g:asyncomplete_auto_completeopt = 0
+
+augroup asycompleteSetup
+    au!
+    autocmd User asyncomplete_setup call RegisterAsyncompleteSources()
+augroup END
+
+function RegisterAsyncompleteSources()
+    call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': [],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ 'config': {
+    \    'max_buffer_size': 5000000,
+    \  },
+    \ }))
+    call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+    \ 'name': 'file',
+    \ 'whitelist': ['*'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#file#completor')
+    \ }))
+    call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
+    \ 'name': 'neosnippet',
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+    \ }))
+endfunction
 
 "=========
 " Vim-lsp
 "=========
 
-inoremap <Tab> <C-n>
-inoremap <S-Tab> <C-p>
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+let g:lsp_virtual_text_enabled = 0
+let g:lsp_textprop_enabled = 0
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_highlight_references_enabled = 1
+
+nmap <Leader>a <plug>(lsp-code-action)
+nmap <Leader>D <plug>(lsp-declaration)
+nmap <Leader><Leader>D <plug>(lsp-peek-declaration)
+nmap <Leader>d <plug>(lsp-definition)
+nmap <Leader><Leader>d <plug>(lsp-peek-definition)
+nmap <Leader>s <plug>(lsp-document-symbol)
+nmap <Leader>E <plug>(lsp-document-diagnostics)
+nmap <Leader>h <plug>(lsp-hover)
+nmap <Leader>n <plug>(lsp-next-diagnostic)
+nmap <Leader>p <plug>(lsp-previous-diagnostic)
+nmap <M-N> <plug>(lsp-next-reference)
+nmap <M-P> <plug>(lsp-previous-reference)
+" nmap <Leader>n <plug>(lsp-next-error)
+" nmap <Leader>a <plug>(lsp-next-warning)
+" nmap <Leader>a <plug>(lsp-preview-close)
+" nmap <Leader>a <plug>(lsp-preview-focus)
+" nmap <Leader>a <plug>(lsp-previous-error)
+" nmap <Leader>a <plug>(lsp-previous-warning)
+nmap <Leader>u <plug>(lsp-references)
+nmap <Leader>R <plug>(lsp-rename)
+nmap <Leader>S <plug>(lsp-workspace-symbol)
+" nmap <Leader>a <plug>(lsp-document-format)
+" vmap <Leader>a <plug>(lsp-document-format)
+" nmap <Leader>a <plug>(lsp-document-range-format)
+" xmap <Leader>a <plug>(lsp-document-range-format)
+nmap <Leader>i <plug>(lsp-implementation)
+nmap <Leader><Leader>i <plug>(lsp-peek-implementation)
+nmap <Leader>t <plug>(lsp-type-definition)
+nmap <Leader><Leader>t <plug>(lsp-peek-type-definition)
+nmap <Leader>T <plug>(lsp-type-hierarchy)
+nmap <Leader>H <plug>(lsp-signature-help)
 
 autocmd User lsp_setup call lsp#register_server({
             \ 'name': 'ccls',
@@ -98,15 +170,15 @@ call denite#custom#var('file/rec/git', 'command',
             \ ['git', 'ls-files', '-co', '--exclude-standard'])
 
 " shortcuts
-nmap <Leader>b :Denite buffer<CR>
-nmap <Leader>f :Denite -start-filter file/rec/git<CR>
-nmap <Leader>F :Denite -start-filter file/rec<CR>
-nmap <Leader>e :call DeniteFileBrowser('')<CR>
-nmap <Leader>h :Denite -start-filter help<CR>
-nmap <Leader>c :Denite command_history<CR>
-nmap <Leader>C :Denite -start-filter command<CR>
-nmap <Leader>t :Denite -start-filter tab<CR>
-nmap <Leader>d :Denite -resume<CR>
+nmap <M-b> :Denite buffer<CR>
+nmap <M-f> :Denite -start-filter file/rec/git<CR>
+nmap <M-F> :Denite -start-filter file/rec<CR>
+nmap <M-e> :call DeniteFileBrowser('')<CR>
+nmap <M-h> :Denite -start-filter help<CR>
+nmap <M-c> :Denite command_history<CR>
+nmap <M-C> :Denite -start-filter command<CR>
+nmap <M-t> :Denite -start-filter tab<CR>
+nmap <M-d> :Denite -resume<CR>
 
 function! DeniteFnameescape(dir)
     " Denite will interpret : as an argument separator, which is problematic
@@ -115,7 +187,7 @@ function! DeniteFnameescape(dir)
 endfunction
 
 function! DeniteFileBrowser(dir)
-    let dirname = DeniteFnameescape(dir)
+    let dirname = DeniteFnameescape(a:dir)
     exe 'Denite -start-filter file::'. dirname . ' file:new'
 endfunction
 
@@ -141,7 +213,7 @@ let g:zv_docsets_dir =
 
 let g:zv_disable_mapping = 1
 
-nnoremap <Leader>z <Plug>Zeavim
-vnoremap <Leader>z <Plug>ZVVisSelection
-vnoremap <Leader><Leader>z <Plug>ZVKeyDocset
+nmap <Leader>z <Plug>Zeavim
+vmap <Leader>z <Plug>ZVVisSelection
+vmap <Leader><Leader>z <Plug>ZVKeyDocset
 

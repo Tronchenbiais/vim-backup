@@ -21,11 +21,13 @@ set belloff=all
 set splitbelow
 set splitright
 set clipboard=unnamedplus
+set scrolloff=8
 
 " Insert and command mode completion
 set wildmode=longest:full,full
 set wildmenu
-set completeopt=menu,menuone,longest,preview
+set completeopt=menu,menuone,noinsert,noselect,preview
+set pumheight=10
 set noinfercase
 
 " Indent settings
