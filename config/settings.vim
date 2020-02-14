@@ -30,6 +30,11 @@ set completeopt=menu,menuone,noinsert,noselect,preview
 set pumheight=10
 set noinfercase
 
+" Enable concealed text
+" These settings work well with neosnippet.
+set conceallevel=1
+set concealcursor=vi
+
 " Indent settings
 set shiftwidth=4
 set softtabstop=4
