@@ -96,11 +96,6 @@ nmap <Leader><Leader>t <plug>(lsp-peek-type-definition)
 nmap <Leader>T <plug>(lsp-type-hierarchy)
 nmap <Leader>H <plug>(lsp-signature-help)
 
-autocmd User lsp_setup call lsp#register_server({
-            \ 'name': 'ccls',
-            \ 'cmd': ['ccls'],
-            \ 'whitelist': ['c', 'cpp'],
-            \ })
 
 function! s:on_lsp_buffer_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
