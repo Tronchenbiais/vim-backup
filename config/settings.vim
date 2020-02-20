@@ -1,6 +1,7 @@
 " Colorscheme
+colorscheme gruvbox-material
+set termguicolors
 set background=dark
-colorscheme gruvbox
 filetype plugin indent on
 syntax on
 " Dim inactive buffers

@@ -1,18 +1,9 @@
 [submodule "pack/bundle/start/vim-fugitive"]
 	path = pack/bundle/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "pack/bundle/start/vim-surround"]
-	path = pack/bundle/start/vim-surround
-	url = https://github.com/tpope/vim-surround
 [submodule "pack/bundle/start/neosnippet-snippets"]
 	path = pack/bundle/start/neosnippet-snippets
 	url = https://github.com/Shougo/neosnippet-snippets.git
-[submodule "pack/bundle/start/gruvbox"]
-	path = pack/bundle/start/gruvbox
-	url = https://github.com/morhetz/gruvbox.git
-[submodule "pack/bundle/start/LanguageClient-neovim"]
-	path = pack/bundle/start/LanguageClient-neovim
-	url = https://github.com/autozimu/LanguageClient-neovim.git
 [submodule "pack/bundle/start/neosnippet"]
 	path = pack/bundle/start/neosnippet
 	url = https://github.com/Shougo/neosnippet.vim.git
@@ -25,9 +16,6 @@
 [submodule "pack/bundle/start/denite"]
 	path = pack/bundle/start/denite
 	url = https://github.com/Shougo/denite.nvim.git
-[submodule "pack/bundle/start/deoplete"]
-	path = pack/bundle/start/deoplete
-	url = https://github.com/Shougo/deoplete.nvim.git
 [submodule "pack/bundle/start/vim-clap"]
 	path = pack/bundle/start/vim-clap
 	url = https://github.com/liuchengxu/vim-clap.git
@@ -55,3 +43,9 @@
 [submodule "pack/lsp/start/asyncomplete-buffer.vim"]
 	path = pack/lsp/start/asyncomplete-buffer.vim
 	url = https://github.com/prabirshrestha/asyncomplete-buffer.vim.git
+[submodule "pack/bundle/start/grubbox-material"]
+	path = pack/bundle/start/grubbox-material
+	url = https://github.com/gruvbox-material/vim.git
+[submodule "pack/bundle/start/vim-sandwich"]
+	path = pack/bundle/start/vim-sandwich
+	url = https://github.com/machakann/vim-sandwich.git
