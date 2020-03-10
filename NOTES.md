@@ -1,7 +1,3 @@
-# Issues
-
-- vifm inside vim has terrible colors with gruvbox-material
-
 # Things to try
 
 - omnibar : Denite is pretty complete, but heavy and sometimes buggy
