@@ -59,7 +59,8 @@ set foldlevel=0
 if(has('nvim'))
     augroup terminal_config
         au!
-        autocmd TermOpen * setlocal nonumber norelativenumber
+        autocmd TermEnter * setlocal nonumber norelativenumber
+        autocmd TermLeave * setlocal number relativenumber
         tmap <C-S> <C-\><C-N>
         tmap <C-Q> <C-\><C-N>
     augroup END
