@@ -13,16 +13,16 @@
 
 - vim-sandwitch is apparently stricly better than vim-surround. try it someday.
 
-- note-taking pluggins, are they worht it ?
+- wiki plugin, waikiki is the next candidate (wiki.vim I don't like, and
+  vim-wiki is heavyweight and adds many mappings)
 
 # Cleanup
 
-There is now a runtime directory in this repo. Many self-contained pieces of
-config could go in a plugin file there. It would be easier to understand and
-maintain than the current architecture (`mappings.vim`, `commands.vim` and
-`settings.vim`). plugin configuration could also be done more precisely using
-the `after` folder. Most of the config directory should in fact end up in the
-runtime.
+All files are now sourced from the cleanup folder, making it easier to control
+what is sourced before/after plugins. `mappings.vim`, `settings.vim` and
+`commands.vim` could probably be broken into smaller files that deal with
+particular aspects of the configuration (moving around, completion, etc.)
+
 
 # Make vim fast again
 

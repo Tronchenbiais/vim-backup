@@ -1,4 +1,4 @@
 .netrwhist
 tags
-config/local/
+runtime/**/local/
 *.pyc
