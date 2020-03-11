@@ -1,11 +1,14 @@
-# Things to try
+# Plugins to try
 
-- omnibar : Denite is pretty complete, but heavy and sometimes buggy
-    - should try fzf / crtlp again ? probably not
-    - Denite is the last heavyweight, python3 / neovim only pluggins. The dream
-      of a powerfull, vim-compatible config is alive again. Most of the crazy
-      Denite stuff I never use anyways. The most popular alternative now is
-      vim-clap, but fzf is already installed in the main config
+- Alternate
+- Bufferize
+- Commentary, NerdCommenter
+- Easy-align, Tabular
+- Far
+- Gitgutter
+- Undoquit
+- Vimade
+- Quickfix-reflector, Qfgrep
 
 # Cleanup
 
