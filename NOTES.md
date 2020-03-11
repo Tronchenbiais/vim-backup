@@ -7,18 +7,12 @@
       Denite stuff I never use anyways. The most popular alternative now is
       vim-clap, but fzf is already installed in the main config
 
-- vim-sandwitch is apparently stricly better than vim-surround. try it someday.
-
-- wiki plugin, waikiki is the next candidate (wiki.vim I don't like, and
-  vim-wiki is heavyweight and adds many mappings)
-
 # Cleanup
 
 All files are now sourced from the cleanup folder, making it easier to control
 what is sourced before/after plugins. `mappings.vim`, `settings.vim` and
 `commands.vim` could probably be broken into smaller files that deal with
 particular aspects of the configuration (moving around, completion, etc.)
-
 
 # Make vim fast again
 
