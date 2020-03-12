@@ -1,6 +1,7 @@
 inoremap <Tab> <C-n>
 inoremap <S-Tab> <C-p>
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
+inoremap <expr> <Esc> pumvisible() ? asyncomplete#cancel_popup() : "\<Esc>"
 
 let g:asyncomplete_auto_completeopt = 0
 
