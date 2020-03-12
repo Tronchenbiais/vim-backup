@@ -1,12 +1,12 @@
 " Get script directory
-let g:vimConfigPath = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+let g:vim_config_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
 " Add this directory to the packpath
-exe "set packpath+=" . fnameescape(g:vimConfigPath)
-exe "set runtimepath^=" . fnameescape(g:vimConfigPath . '/runtime/')
-exe "set runtimepath+=" . fnameescape(g:vimConfigPath . '/runtime/after/')
+exe "set packpath+=" . fnameescape(g:vim_config_dir)
+exe "set runtimepath^=" . fnameescape(g:vim_config_dir . '/runtime/')
+exe "set runtimepath+=" . fnameescape(g:vim_config_dir . '/runtime/after/')
 " General config files inclusion
-for s:file in glob(g:vimConfigPath . '/config/*.vim', 0, 1)
+for s:file in glob(g:vim_config_dir . '/config/*.vim', 0, 1)
     exe 'source ' . s:file
 endfor
 
@@ -15,6 +15,6 @@ runtime! before/*.vim
 
 " Gui-specific configuration
 if has("gui_running")
-    exe 'source ' . fnameescape(g:vimConfigPath) . '/gvimrc'
+    exe 'source ' . fnameescape(g:vim_config_dir) . '/gvimrc'
 endif
 

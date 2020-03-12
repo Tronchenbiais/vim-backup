@@ -1,12 +1,13 @@
 " Colorscheme
+let g:gruvbox_material_palette = 'original'
 colorscheme gruvbox-material
 set termguicolors
 set background=dark
 filetype plugin indent on
 syntax on
 " Dim inactive buffers
-highlight ActiveWin ctermbg=0
-highligh InactiveWin ctermbg=234
+highlight ActiveWin guibg=bg
+highligh InactiveWin guibg=#202020
 set winhighlight=Normal:ActiveWin,NormalNC:InactiveWin
 
 " Common options

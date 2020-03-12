@@ -33,12 +33,3 @@ The best solution should have minimal impact on the dotfiles config (number 1
 and 3 are worse here), and allow to easily switch from light config to full
 config (number 3 makes this really easy, number 2 should not be too bad, and
 number 1 makes this almost impossible).
-
-# Project specific config
-
-More and more projects will have specific configuration (language server
-settings, custom completion sources, options to save/store layout, custom
-filetype detection). Should we just have a .vim script in there that we source,
-or a directory containing .vim files for each project (including cd directives)
-(can be plugged into fzf), or use a project management plugin (does that even
-exist?)? Only experience will tell.
