@@ -6,6 +6,3 @@ let g:neosnippet#disable_runtime_snippets =
             \{
             \}
 
-imap <C-Space> <Plug>(neosnippet_expand_or_jump)
-smap <C-Space> <Plug>(neosnippet_expand_or_jump)
-

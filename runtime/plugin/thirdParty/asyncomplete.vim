@@ -1,8 +1,15 @@
-inoremap <Tab> <C-n>
-inoremap <S-Tab> <C-p>
-inoremap <expr> <CR> pumvisible() ? asyncomplete#close_popup() : "\<CR>"
-inoremap <expr> <C-c> pumvisible() ? asyncomplete#cancel_popup() : "\<Esc>"
 
+imap <expr> <Tab> pumvisible() ? "\<C-n>"
+            \: neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)"
+            \: "\<Tab>"
+imap <S-Tab> <C-p>
+imap <expr> <Cr> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<Cr>"
+
+smap <Tab> <Plug>(neosnippet_expand_or_jump)
+inoremap <expr> <C-space> asyncomplete#force_refresh()
+inoremap <expr> <Esc> pumvisible() ? asyncomplete#cancel_popup() : "\<Esc>"
+
+let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 0
 
 augroup asycompleteSetup
