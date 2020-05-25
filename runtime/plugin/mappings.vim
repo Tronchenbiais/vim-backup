@@ -3,10 +3,10 @@ let mapleader="ù"
 let maplocalleader="_"
 
 " Tabbing shortcuts
-nmap <C-K> :tabnext<CR>
-nmap <Leader>k :tabmove +1<CR>
-nmap <C-J> :tabprevious<CR>
-nmap <Leader>j :tabmove -1<CR>
+nmap <C-j> :tabnext<CR>
+nmap <Leader>j :tabmove +1<CR>
+nmap <C-k> :tabprevious<CR>
+nmap <Leader>k :tabmove -1<CR>
 nmap <Leader>w :tabclose<CR>
 
 " Windows

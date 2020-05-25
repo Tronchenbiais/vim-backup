@@ -7,7 +7,7 @@ imap <expr> <Cr> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<Cr>
 
 smap <Tab> <Plug>(neosnippet_expand_or_jump)
 inoremap <expr> <C-space> asyncomplete#force_refresh()
-inoremap <expr> <Esc> pumvisible() ? asyncomplete#cancel_popup() : "\<Esc>"
+inoremap <expr> <C-C> pumvisible() ? asyncomplete#cancel_popup() : "\<C-C>"
 
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 0

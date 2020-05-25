@@ -28,7 +28,7 @@ set scrolloff=8
 " Insert and command mode completion
 set wildmode=longest:full,full
 set wildmenu
-set completeopt=menu,menuone,noinsert,noselect,preview
+set completeopt=menu,menuone,noinsert,noselect
 set pumheight=10
 set noinfercase
 

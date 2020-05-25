@@ -1,4 +1,4 @@
-let g:vim_projects_dir = g:vim_config_dir . '/projects'
+let g:vim_projects_dir = getenv('PROJECTS_DIR')
 
 function LoadProject(proj_name, new_tab) abort
     let target_dir = g:vim_projects_dir . '/' . a:proj_name
@@ -30,7 +30,7 @@ function EditProjectConfig(proj_name, new_tab)
             tabnew
             exe 'T ' . target_name . ' config'
         endif
-        exe 'edit ' . target_dir . '/project_init.vim'
+        exe 'Vifm ' . target_dir
     else
         echoerr 'Project does not exist'
     endif
