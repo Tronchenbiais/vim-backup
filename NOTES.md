@@ -5,31 +5,24 @@
 - Commentary, NerdCommenter
 - Easy-align, Tabular
 - Far
-- Gitgutter
 - Undoquit
 - Vimade
 - Quickfix-reflector, Qfgrep
+- Vimspector
 
-# Cleanup
+# Vim vs. Nvim 
 
-All files are now sourced from the cleanup folder, making it easier to control
-what is sourced before/after plugins. `mappings.vim`, `settings.vim` and
-`commands.vim` could probably be broken into smaller files that deal with
-particular aspects of the configuration (moving around, completion, etc.)
+- Nvim gets <M-*> bindings right.
+- Nvim makes it easier to use denite. The switch is not impossible.
+- Nvim is out of date in debian repo.
+- Native lsp interface feels irrelevant.
 
 # Make vim fast again
 
-Nvim startup is also now getting higher. When we want the full IDE features,
-this is not a problem, but it should be possible to have a light configuration,
-maybe using the alias `lvim`. Options are :
+Nvim startup is getting high. With the addition of project commands, we can
+decide when to load all heavy plugins. Probably what should be done now is
+eliminate as many plugins as possible in regular nvim, and load them via the
+`ide` alias or the `Project` command.
 
-1. Use different programs (i.e. vim and nvim) as editor and IDE.
-2. Use a global flag (i.e. `g:lightConfig`) during loading to choose what to
-   include, and then use `alias lvim="nvim -c 'let g:lightConfig=1'"`)
-3. Use different entry points (`init.vim` and `linit.vim` for example), and
-   then use `alias lvim="nvim -u ~/.config/nvim/linit.vim"`.
-
-The best solution should have minimal impact on the dotfiles config (number 1
-and 3 are worse here), and allow to easily switch from light config to full
-config (number 3 makes this really easy, number 2 should not be too bad, and
-number 1 makes this almost impossible).
+A decent amount of nvim startup time is spend loading our custom plugin config,
+maybe it's time to start using the autoload directory.

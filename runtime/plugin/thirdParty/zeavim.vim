@@ -4,7 +4,7 @@ let g:zv_file_type =
 
 let g:zv_docsets_dir =
             \has('unix')
-            \? $HOME . '/.local/share/docsets'
+            \? $HOME . '/.local/share/docsets/Zeal/Zeal/docsets'
             \: ""
 
 let g:zv_disable_mapping = 1
