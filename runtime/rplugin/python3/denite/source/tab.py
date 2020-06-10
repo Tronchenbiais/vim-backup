@@ -16,7 +16,7 @@ class Source(Base):
         candidates = []
         for t in self.vim.tabpages:
             tabNr = t.number
-            tabTitle = self.vim.call('GetTabTitle', tabNr)
+            tabTitle = self.vim.call('tabs#get_title', tabNr)
             candidates.append({
                 'word': str(tabNr) + ' : ' + tabTitle,
                 'action__tabnr': str(tabNr)

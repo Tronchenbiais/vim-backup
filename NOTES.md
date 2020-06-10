@@ -26,3 +26,17 @@ eliminate as many plugins as possible in regular nvim, and load them via the
 
 A decent amount of nvim startup time is spend loading our custom plugin config,
 maybe it's time to start using the autoload directory.
+
+# Project specific config
+
+This seems to be an interesting idea, and gains us some time.
+
+Points that I am not sure how to address :
+- It becomes clearer that projects want to own tabs, so maybe there should be
+  `t:project` variabe. That way, maybe we can have a ProjectGit command that
+  opens a new tab with git for the project that owns the current tab. (Is this
+  useful though?)
+- Project that export command should prefix them with the project name, or the
+  generic `Project` prefix (name clashes ?)
+- Projects should be able so open terminal emulators with that project.
+
