@@ -1,8 +1,3 @@
-" Colorscheme
-let g:gruvbox_material_palette = 'original'
-colorscheme gruvbox-material
-set termguicolors
-set background=dark
 filetype plugin indent on
 syntax on
 " Dim inactive buffers

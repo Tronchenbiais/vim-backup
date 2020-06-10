@@ -15,7 +15,7 @@
 - Nvim gets <M-*> bindings right.
 - Nvim makes it easier to use denite. The switch is not impossible.
 - Nvim is out of date in debian repo.
-- Native lsp interface feels irrelevant.
+- Native lsp interface feels irrelevant, because plugins are good enough?
 
 # Make vim fast again
 

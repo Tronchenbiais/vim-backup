@@ -10,8 +10,8 @@ nmap <Leader>k :tabmove -1<CR>
 nmap <Leader>w :tabclose<CR>
 
 " Windows
-nnoremap <C-C> <C-W>c
-nnoremap <C-T> :vnew<CR>
+nnoremap <C-c> :call tabs#close_win_save_tab()<CR>
+nnoremap <C-t> :vnew<CR>
 nnoremap <Esc> :cclose\|lclose\|helpclose\|pclose<CR>
 
 " Windows
