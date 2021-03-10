@@ -52,3 +52,6 @@
 [submodule "pack/bundle/start/vim-waikiki"]
 	path = pack/bundle/start/vim-waikiki
 	url = https://github.com/fcpg/vim-waikiki.git
+[submodule "pack/bundle/start/vimspector"]
+	path = pack/bundle/start/vimspector
+	url = https://github.com/puremourning/vimspector.git

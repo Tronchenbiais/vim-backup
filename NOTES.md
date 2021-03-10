@@ -16,6 +16,7 @@
 - Nvim makes it easier to use denite. The switch is not impossible.
 - Nvim is out of date in debian repo.
 - Native lsp interface feels irrelevant, because plugins are good enough?
+- Vim has debugger integartion via vimspector (neovim support is incomplete)
 
 # Make vim fast again
 
@@ -38,5 +39,4 @@ Points that I am not sure how to address :
   useful though?)
 - Project that export command should prefix them with the project name, or the
   generic `Project` prefix (name clashes ?)
-- Projects should be able so open terminal emulators with that project.
 
