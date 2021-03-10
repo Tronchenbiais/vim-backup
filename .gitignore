@@ -2,3 +2,4 @@
 tags
 runtime/**/local/
 *.pyc
+/.venv/
