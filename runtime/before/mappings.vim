@@ -56,6 +56,9 @@ vnoremap <Leader>g <C-]>
 nnoremap <C-H> <C-O>
 nnoremap <C-L> <C-I>
 
-" Repeat macro
-nnoremap Q @@
+" Repeat Q macro
+nnoremap Q @q
+vnoremap Q :'<,'>norm @q<Cr>
+" Repear last edit on selected lines
+vnoremap . :'<,'>norm .<Cr>
 
